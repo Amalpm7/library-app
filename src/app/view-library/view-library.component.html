@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+      <tr>
+        
+        <th scope="col">Book Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">Date</th>
+        <th scope="col">Volume</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of libraryData">
+        
+        <td>{{i.book_name}}</td>
+        <td>{{i.author}}</td>
+        <td>{{i.date}}</td>
+        <td>{{i.volume}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
