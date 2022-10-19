@@ -8,6 +8,7 @@ import { AddLibraryComponent } from './add-library/add-library.component';
 import { FormsModule } from "@angular/forms";
 import { RouterModule, Routes } from '@angular/router';
 import { ViewLibraryComponent } from './view-library/view-library.component';
+import { HttpClientModule } from "@angular/common/http";
 
 const appRouter:Routes=[
   {
@@ -28,7 +29,8 @@ const appRouter:Routes=[
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(appRouter)
+    RouterModule.forRoot(appRouter),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
