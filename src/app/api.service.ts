@@ -16,4 +16,7 @@ export class ApiService {
   deleteBook=(data:any)=>{
     return this.http.post("http://localhost:8080/deletebook",data)
   }
+  searchData=(data:any)=>{
+    return this.http.post("http://localhost:8080/searchBook",data)
+  }
 }
