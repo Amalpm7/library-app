@@ -16,6 +16,17 @@ export class ViewLibraryComponent implements OnInit {
       }
     )
   }
+  deleteBook=(id:any)=>{
+    let data={
+      "id":id
+    }
+    this.myapi.deleteBook(data).subscribe(
+      (resp)=>{
+        alert("Deleted")
+      }
+    )
+    this.putViewLibrary()
+  }
   libraryData:any=[]
   
 
