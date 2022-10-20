@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-view-library',
@@ -7,12 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewLibraryComponent implements OnInit {
 
-  constructor() { }
-  libraryData=
-  [{"book_name":"ramayan",
-  "author":"vathmiki",
-  "date":"2022-10-15",
-  "volume":"18"}]
+  constructor(private myapi:ApiService) { this.putViewLibrary() }
+  putViewLibrary=()=>{
+    this.myapi.getData().subscribe(
+      (data)=>{
+        this.libraryData=data
+      }
+    )
+  }
+  deleteBook=(id:any)=>{
+    let data={
+      "id":id
+    }
+    this.myapi.deleteBook(data).subscribe(
+      (resp)=>{
+        alert("Deleted")
+      }
+    )
+    this.putViewLibrary()
+  }
+  libraryData:any=[]
+  
 
   ngOnInit(): void {
   }
