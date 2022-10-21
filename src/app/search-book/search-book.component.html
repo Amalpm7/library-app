@@ -16,19 +16,24 @@
                 <div *ngFor="let i of bookData">
                     <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                         <label for="" class="form-label">Book name</label>
-                        <input type="text" class="form-control"value="{{i.book_name}}">
+                        <input type="text" class="form-control"value="{{i.book_name}}"[(ngModel)]=i.book_name>
                     </div>
                     <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                         <label for="" class="form-label">Author</label>
-                        <input type="text" class="form-control" value="{{i.author}}">
+                        <input type="text" class="form-control" value="{{i.author}}"[(ngModel)]=i.author>
                     </div>
                     <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                         <label for="" class="form-label">Date</label>
-                        <input type="text" class="form-control" value="{{i.date}}">
+                        <input type="text" class="form-control" value="{{i.date}}" [(ngModel)]="i.date">
                     </div>
                     <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                         <label for="" class="form-label">Volume</label>
-                        <input type="text" class="form-control" value="{{i.volume}}">
+                        <input type="text" class="form-control" value="{{i.volume}}"[(ngModel)]="i.volume">
+                    </div>
+                    <div class="col">
+                        <div class="row col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                            <button class="btn btn-success"(click)="updateData()">Update</button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -20,10 +20,14 @@ export class SearchBookComponent implements OnInit {
         this.bookData=response
       }
     )
-    
-    
-
-  }
+    }
+    updateData=()=>{
+      this.myapi.updateData(this.bookData[0]).subscribe(
+        (response)=>{
+          alert("Succesfully updated")
+        }
+      )
+    }
   bookData:any=[]
 
 
